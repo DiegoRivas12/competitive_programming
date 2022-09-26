@@ -34,11 +34,11 @@ void mostrarMatriz(int** m,int Cantx,int cantY){
 }
 int main(){
 
-    ifstream archivo("archivo_11559.txt");
+    ifstream archivo("archivo_11559.txt");//
     string linea;
     int g=0;
     vector<int> salida;
-    while(!archivo.eof()){//Lee cada uno de los casos
+    while(!archivo.eof()){//Lee cada uno de los casos//
         int primerLinea[4];//numero participantes, presupuesto, cantidad hoteles, semanas de eleccion
         int i=0,j=0;
         getline(archivo,linea);
@@ -47,8 +47,8 @@ int main(){
     
         int N=primerLinea[0],B=primerLinea[1],H=primerLinea[2],W=primerLinea[3];
         //int a[H][W];//Numero de camas disponibles cada fin de semana en el hotel
-        int**a=nullptr;
-        int* p=nullptr;
+        int**a=nullptr;//
+        int* p=nullptr;//
         a=new int*[H];//filas
         for(int i=0;i<H;i++){
             a[i]=new int[W];//Creando columnas
@@ -67,7 +67,7 @@ int main(){
         }
         //Analisis de datos para decidir si viajamos o no
         
-        MERGE_SORT(a,p,0,H-1,H,W);//Ordenamos los datos priorizando los mas baratos
+        MERGE_SORT(a,p,0,H-1,H,W);//Ordenamos los datos priorizando los mas baratos//
         
         for(int o=0;o<H;o++){
             //int precioHotel=minimo(p,H);
@@ -237,11 +237,15 @@ void MERGE(int* A,int p,int q,int r,int cantX,int canY){
     }
 }
 bool hayCamas(int* v,int cantCama,int lon){//cantCama la cantidad de camas que necesitamos
-    
+    int contar=0;
     for(int i=0;i<lon;i++){
         if(cantCama<=v[i]){
-            return true;
+            //return true;
+            contar++;
         }
+    }
+    if(contar==cantCama){
+        return true;
     }
     return false;
 }
