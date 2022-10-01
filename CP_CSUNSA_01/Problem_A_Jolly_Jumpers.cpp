@@ -17,7 +17,7 @@ int main(){
             //std::cout << "Lo que ingreso no es un entero\n";
         }*/
         cout<<"n "<<n<<endl;
-        bool evaluandoSaltos[n-1]={};
+        bool evaluandoSaltos[n-1]={};//n+1
         int contadorSaltos=0;
         int numeros[n];//Numeros a evaluar por caso
         /*for(int i = 0; i < n-1; i++ )
