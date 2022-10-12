@@ -13,10 +13,13 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>amplitud;
         cin>>frecuencia;
+        cout<<endl;
         crearOnda(amplitud,frecuencia);
         //cin>>blanco;
-        cout<<endl;
+        
         getline(cin,blanco);
+        if(i==n-1)
+           cout<<endl;
     }
     return 0;
 }
@@ -34,6 +37,7 @@ void crearOnda(int amplitud,int frecuencia){
             }
             cout<<endl;
         }
-        cout<<endl;
+        if(f!=frecuencia-1)
+            cout<<endl;
     }
 }
