@@ -8,22 +8,24 @@ int main(){
     string blanco;
     cin>>n;
     //cin>>blanco;
-    getline(cin,blanco);
+    //getline(cin,blanco);
 
     for(int i=0;i<n;i++){
         cin>>amplitud;
         cin>>frecuencia;
-        cout<<endl;
+        //cout<<endl;
         crearOnda(amplitud,frecuencia);
         //cin>>blanco;
         
-        getline(cin,blanco);
-        if(i==n-1)
-           cout<<endl;
+        //getline(cin,blanco);
+        //Imprima el carácter de la siguiente línea cuando sea la última ola en este caso
+        if (i < n - 1)
+            cout<<endl;
     }
     return 0;
 }
 void crearOnda(int amplitud,int frecuencia){
+    //cout<<endl;
     for(int f=0;f<frecuencia;f++){
         for(int i=1;i<=amplitud;i++){
             for(int j=1;j<=i;j++){
@@ -37,7 +39,7 @@ void crearOnda(int amplitud,int frecuencia){
             }
             cout<<endl;
         }
-        if(f!=frecuencia-1)
+        if(f<frecuencia-1)
             cout<<endl;
     }
 }

@@ -4,12 +4,10 @@ using namespace std;
 int main(){
 
     int t,v;
-    cin>>v>>t;
-    if(-100<=v && v<=100 && 0<=t && t<=200){
+    
+    while(cin>>v>>t){
         cout<<2*v*t<<endl;
     }
-    else{
-        cout<<"Error";
-    }
+    
     return 0;
 }

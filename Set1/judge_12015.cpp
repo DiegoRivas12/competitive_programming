@@ -31,7 +31,7 @@ int main(){
         //cout<<"Mayor "<<mayor<<endl;
         
         //Escogiendo paginas rankeadas que coincidan en ser el mayor
-        cout<<"Caso #"<<i+1<<":"<<endl;
+        cout<<"Case #"<<i+1<<":"<<endl;
         for(int k=0;k<10;k++){
             if(V[k]==mayor){
                 cout<<URL[k]<<endl;
