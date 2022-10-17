@@ -3,7 +3,7 @@
 using namespace std;
 //#define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);
 
-int main(){
+int main(){// 4<=m,n<=10
     //fastio
     int t, n, m;
     char letra;
@@ -42,7 +42,7 @@ int main(){
            if((n*m)%2){
             respuesta=n*m/2+1;
            }
-           else{
+           else{//division par
             respuesta=n*m/2;
            }
         }
