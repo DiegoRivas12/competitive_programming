@@ -41,12 +41,15 @@ int main(){
                     //agregar=1;
                     break;
                 }
+                else if(posUltimo-1==k){
+                    agregar=1;
+                }
                 else{
-                    //agregar=-1;
+                    agregar=-1;
                 }
                 
-                int numerosRestantes=k-(posUltimo)-1;//Numeros que sobran a la derecha quese pueden utilizar -1 para no contar el ultimo numero usado
-                int posicionesDisponibles=abs(6-posUltimo);//Para saber si hay espacios a la derecha que se peudn llenar de la combinacion de 6
+                int numerosRestantes=k-(posUltimo)+agregar;//Numeros que sobran a la derecha quese pueden utilizar -1 para no contar el ultimo numero usado
+                int posicionesDisponibles=6-posUltimo+restar;//Para saber si hay espacios a la derecha que se peudn llenar de la combinacion de 6
                 int subCombinacion=factorial(numerosRestantes)/(factorial(numerosRestantes-(posicionesDisponibles))*factorial(posicionesDisponibles));
                 int empieza=posUltimo+2;//Enpieza la segunda parte
                 
