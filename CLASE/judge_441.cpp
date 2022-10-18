@@ -21,7 +21,7 @@ int main(){
             }
             //8 1 2 3 5 8 13 21 34
             int totalCombinacion=factorial(k)/(factorial(k-6)*factorial(6));
-            cout<<" JAA"<<totalCombinacion<<endl;
+            //cout<<" JAA"<<totalCombinacion<<endl;
             int posInicio=1;
             int inicio=1;//Recorrera todas las posibles conbinaciones
             int posUltimo=6;
@@ -42,9 +42,11 @@ int main(){
                     break;
                 }
                 else if(posUltimo-1==k){
+                    cout<<"kksaas"<<endl;
                     agregar=1;
                 }
                 else{
+                    cout<<"bbbas"<<endl;
                     agregar=-1;
                 }
                 
@@ -57,11 +59,11 @@ int main(){
                 cout<<" com "<<subCombinacion<<" posIni "<<posInicio<<" posFin "<<posUltimo<<" posiciones "<<posicionesDisponibles<<endl;
                 for(int j=1;j<=abs(subCombinacion);j++){//Total de subcdenas agregando en la aprte derecha
                     cout<<parteDerecha; 
-                    cout<<"a ";       
+                    //cout<<"a ";       
                     for(int p=0;p<posicionesDisponibles;p++){//Posiciones disponibles a llenar
                         //Se comportara como un ciclo la subcombinacion de la derecha
                         if(empieza+p<=k){
-                            cout<<entrada[empieza+p]<<"f ";   
+                            cout<<entrada[empieza+p]<<" ";   
                         }
                         else{
                             cout<<entrada[(empieza+p)%6]<<" "; //Restamos menos 1, para ignorar el ultimoPos  
@@ -75,14 +77,15 @@ int main(){
                 //inicio++;
                 posUltimo--;
                 if(posUltimo==posInicio-1){//posInicio-1==0
-                    cout<<"ajjajaa"<<posInicio<<endl;
+                    //out<<"ajjajaa"<<posInicio<<endl;
                     posUltimo=6+posInicio;
                     posInicio++;
                     restar++;
                 }
-                cout<<endl;
+                //cout<<endl;
                 parteDerecha="";
             }
+            cout<<endl;
            
         }
         //cout<<"entrada "<<entrada<<endl;
