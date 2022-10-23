@@ -16,56 +16,59 @@ void moverReyna(bool [][8],char tablero[][8],int,int,int&);
 void moverPeon(bool [][8],char tablero[][8],int,int,int&);
 void moverCaballo(bool [][8],char tablero[][8],int,int,int&);
 int main(){
-    int suma_inicial=64;//Partimos del supuesto que ninguna ficha llega a ningun lado (tablero vacio)
-    string filas[8];
-    for(int i=0;i<7;i++){
-        getline(cin,filas[i],'/');
-    }
-    getline(cin,filas[7]);
-
-    bool noAtacado[8][8]={};
-    char tablero[8][8]={};
-    //for(int i=0;i<8;i++){//Muestra las entradas iniciales
-        //cout<<filas[i]<<" ";
-    //}
-
-    //Creamos el tablero
-    for(int i=0;i<8;i++){
-        llenarFilaTablero(noAtacado,tablero,i,filas[i],suma_inicial);
-    }
-    //Analizamos el tablero
-    for(int i=0;i<8;i++){
-        for(int j=0;j<8;j++){
-            if(noAtacado[i][j]==true && tablero[i][j]!=' '){//Una ficha encontrada
-                if(tolower(tablero[i][j])=='k'){//rey
-                    moverRey(noAtacado,tablero,i,j,suma_inicial);
-                }
-                else if(tolower(tablero[i][j])=='r'){//torre
-                    moverTorre(noAtacado,tablero,i,j,suma_inicial);
-                }
-                else if(tolower(tablero[i][j])=='q'){//reyna
-                    moverReyna(noAtacado,tablero,i,j,suma_inicial);
-                }
-                else if(tolower(tablero[i][j])=='p'){//peon
-                    moverPeon(noAtacado,tablero,i,j,suma_inicial);
-                }
-                else if(tolower(tablero[i][j])=='b'){//alfil
-                    moverAlfil(noAtacado,tablero,i,j,suma_inicial);
-                }
-                else if(tolower(tablero[i][j])=='n'){//caballo
-                    moverCaballo(noAtacado,tablero,i,j,suma_inicial);
-                }
-            }       
+    while(cin){
+        int suma_inicial=64;//Partimos del supuesto que ninguna ficha llega a ningun lado (tablero vacio)
+        string filas[8];
+        for(int i=0;i<7;i++){
+            getline(cin,filas[i],'/');
         }
-    }
+        getline(cin,filas[7]);
 
-    for(int i=0;i<8;i++){//Mostramos el tablero construido
-        for(int j=0;j<8;j++){
-            cout<<tablero[i][j]<<" ";
+        bool noAtacado[8][8]={};
+        char tablero[8][8]={};
+        //for(int i=0;i<8;i++){//Muestra las entradas iniciales
+            //cout<<filas[i]<<" ";
+        //}
+
+        //Creamos el tablero
+        for(int i=0;i<8;i++){
+            llenarFilaTablero(noAtacado,tablero,i,filas[i],suma_inicial);
         }
-        cout<<endl;
+        //Analizamos el tablero
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+                if(noAtacado[i][j]==true && tablero[i][j]!=' '){//Una ficha encontrada
+                    if(tolower(tablero[i][j])=='k'){//rey
+                        moverRey(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                    else if(tolower(tablero[i][j])=='r'){//torre
+                        moverTorre(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                    else if(tolower(tablero[i][j])=='q'){//reyna
+                        moverReyna(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                    else if(tolower(tablero[i][j])=='p'){//peon
+                        moverPeon(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                    else if(tolower(tablero[i][j])=='b'){//alfil
+                        moverAlfil(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                    else if(tolower(tablero[i][j])=='n'){//caballo
+                        moverCaballo(noAtacado,tablero,i,j,suma_inicial);
+                    }
+                }       
+            }
+        }
+
+        /*for(int i=0;i<8;i++){//Mostramos el tablero construido
+            for(int j=0;j<8;j++){
+                cout<<tablero[i][j]<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<"Suma "<<suma_inicial<<endl;*/
+        cout<<suma_inicial<<endl;
     }
-    cout<<"Suma "<<suma_inicial<<endl;
     return 0;
 }
 void llenarFilaTablero(bool noAtacado[][8],char tablero[][8],int i,string fila,int& sumaInicial){
