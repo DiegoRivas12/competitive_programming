@@ -17,7 +17,7 @@ void moverPeon(bool [][8],char tablero[][8],int,int,int&);
 void moverCaballo(bool [][8],char tablero[][8],int,int,int&);
 int main(){
     while(cin){
-        int suma_inicial=64;//Partimos del supuesto que ninguna ficha llega a ningun lado (tablero vacio)
+        
         string filas[8];
         for(int i=0;i<7;i++){
             getline(cin,filas[i],'/');
@@ -29,7 +29,7 @@ int main(){
         //for(int i=0;i<8;i++){//Muestra las entradas iniciales
             //cout<<filas[i]<<" ";
         //}
-
+        int suma_inicial=64;//Partimos del supuesto que ninguna ficha llega a ningun lado (tablero vacio)
         //Creamos el tablero
         for(int i=0;i<8;i++){
             llenarFilaTablero(noAtacado,tablero,i,filas[i],suma_inicial);
@@ -267,16 +267,26 @@ void moverReyna(bool noAtacado[][8],char tablero[][8],int x,int y,int& sumaInici
 void moverPeon(bool noAtacado[][8],char tablero[][8],int x,int y,int& sumaInicial){//Para ficha blanca o negra el rey se mueve igual
     //x, y posicion de ka ficha del rey
     if(tablero[x][y]=='p'){//ficha negra
-        if(x+1<=8-1){//Mover abajo
-            if(noAtacado[x+1][y]==false && tablero[x+1][y]==' '){//Para ignorar las posiciones de las fichas
-                sumaInicial--;noAtacado[x+1][y]=true;tablero[x+1][y]='*';
+        if(x+1<=8-1 && y-1>=0){//Mover diagonal izquierda
+            if(noAtacado[x+1][y-1]==false && tablero[x+1][y-1]==' '){//Para ignorar las posiciones de las fichas
+                sumaInicial--;noAtacado[x+1][y-1]=true;tablero[x+1][y-1]='*';
+            }
+        }
+        if(x+1<=8-1 && y+1<=8-1){//Mover diagonal derecha
+            if(noAtacado[x+1][y+1]==false && tablero[x+1][y+1]==' '){//Para ignorar las posiciones de las fichas
+                sumaInicial--;noAtacado[x+1][y+1]=true;tablero[x+1][y+1]='*';
             }
         }
     }
     else{//ficha blanca
-        if(x-1>=0){//Mover abajo
-            if(noAtacado[x-1][y]==false && tablero[x-1][y]==' '){//Para ignorar las posiciones de las fichas
-                sumaInicial--;noAtacado[x-1][y]=true;tablero[x-1][y]='*';
+        if(x-1>=0 && y-1>=0){//Mover diagonal izquierda
+            if(noAtacado[x-1][y-1]==false && tablero[x-1][y-1]==' '){//Para ignorar las posiciones de las fichas
+                sumaInicial--;noAtacado[x-1][y-1]=true;tablero[x-1][y-1]='*';
+            }
+        }
+        if(x-1>=0 && y+1<=8-1){//Mover diagonal derecha
+            if(noAtacado[x-1][y+1]==false && tablero[x-1][y+1]==' '){//Para ignorar las posiciones de las fichas
+                sumaInicial--;noAtacado[x-1][y+1]=true;tablero[x-1][y+1]='*';
             }
         }
     }
