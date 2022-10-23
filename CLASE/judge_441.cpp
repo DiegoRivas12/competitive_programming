@@ -59,18 +59,33 @@ int main(){
                 cout<<" com "<<subCombinacion<<" posIni "<<posInicio<<" posFin "<<posUltimo<<" posiciones "<<posicionesDisponibles<<endl;
                 for(int j=1;j<=abs(subCombinacion);j++){//Total de subcdenas agregando en la aprte derecha
                     cout<<parteDerecha; 
-                    //cout<<"a ";       
-                    for(int p=0;p<posicionesDisponibles;p++){//Posiciones disponibles a llenar
+                    //cout<<"a "; 
+                    int l=0;  
+                    /*if(l==numerosRestantes-j){
+                        empieza++;l=0;
+                    }*/    
+                    for(int p=0;p<posicionesDisponibles;p++){//Posiciones disponibles a llenar parte derecha
                         //Se comportara como un ciclo la subcombinacion de la derecha
+                        cout<<"Empieza mas p"<<empieza+p<<endl;
                         if(empieza+p<=k){
-                            cout<<entrada[empieza+p]<<" ";   
+                            cout<<entrada[empieza+p+l]<<" a";
+                            if(empieza+p==k){
+                                empieza++;
+                                l=0;
+                            }
                         }
-                        else{
-                            cout<<entrada[(empieza+p)%6]<<" "; //Restamos menos 1, para ignorar el ultimoPos  
-                        }
+                        /*else{
+                            //l=0;
+                            cout<<entrada[((empieza)+p)]<<" b"; //Restamos menos 1, para ignorar el ultimoPos  
+                        }*/
+                        
                         //inicio++;
                     }
-                    empieza++;
+                    l++;
+                    //empieza++;
+                    //cout<<"l "<<l<<" numerosss "<<numerosRestantes-j<<endl;
+                    
+                    
                     //inicio++;
                     cout<<endl;
                 }
