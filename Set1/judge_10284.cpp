@@ -26,6 +26,11 @@ int main(){
 
         bool noAtacado[8][8]={};
         char tablero[8][8]={};
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+                noAtacado[i][j]=false;
+            }
+        }
         //for(int i=0;i<8;i++){//Muestra las entradas iniciales
             //cout<<filas[i]<<" ";
         //}
