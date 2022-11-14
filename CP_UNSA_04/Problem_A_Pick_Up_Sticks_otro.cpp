@@ -30,7 +30,7 @@ int main() {
 
         queue<int> q;//cola
         for (int i = 0; i < n; i++) {
-            if (indegree[i] == 0) {
+            if (indegree[i] == 0) {//i no tiene ningunj palo encima
                 q.push(i);
             }
         }
