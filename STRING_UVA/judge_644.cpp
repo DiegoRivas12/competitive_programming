@@ -5,7 +5,6 @@
 #include <string>
 using namespace std;
 
-#define For(i, a, b) for (int i=a; i<=b; i++)
 #define maxN 10
 string code[maxN];
 
